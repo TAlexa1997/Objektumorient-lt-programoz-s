@@ -88,7 +88,8 @@ def foglalas_lemondasa():
     except ValueError:
         print("Hibás bemenet, számot vártam.")
 
-
+if __name__ == "__main__":
+    menu()
             
             
 
