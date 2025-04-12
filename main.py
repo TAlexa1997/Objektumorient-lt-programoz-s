@@ -64,6 +64,30 @@ def jegy_foglalasa():
     
     except ValueError:
         print("Hibás bemenet, számot vártam.")
+        
+def foglalas_lemondasa():
+    print("\n--- Foglalás lemondása ---")
+
+    if not foglalasok:
+        print("Nincs egyetlen foglalás sem.")
+        return
+
+    print("Aktuális foglalások:")
+    for index, f in enumerate(foglalasok):
+        print(f"{index + 1}. {f.utas_nev} - {f.jarat.jaratszam} - {f.jarat.celallomas} - {f.datum}")
+
+    try:
+        valasztott = int(input("Melyik foglalást szeretnéd törölni? (sorszám): ")) - 1
+        if valasztott < 0 or valasztott >= len(foglalasok):
+            print("Érvénytelen sorszám.")
+            return
+
+        torolt = foglalasok.pop(valasztott)
+        print(f"{torolt.utas_nev} foglalása törölve lett.")
+    
+    except ValueError:
+        print("Hibás bemenet, számot vártam.")
+
 
             
             
