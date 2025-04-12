@@ -5,3 +5,7 @@ class Jarat(ABC):
         self.jaratszam = jaratszam
         self.celallomas = celallomas
         self.jegyar = jegyar
+
+class BelfoldiJarat(Jarat):
+    def __init__(self, jaratszam: str, celallomas: str, jegyar: float):
+        super().__init__(jaratszam, celallomas, jegyar)
