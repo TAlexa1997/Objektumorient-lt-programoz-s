@@ -18,3 +18,9 @@ class LegiTarsasag:
     def __init__(self, nev: str):
         self.nev = nev
         self.jaratok = []
+
+class JegyFoglalas:
+    def __init__(self, utas_nev: str, jarat: Jarat, datum: str):
+        self.utas_nev = utas_nev
+        self.jarat = jarat
+        self.datum = datum
