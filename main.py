@@ -1,26 +1,20 @@
-from abc import ABC
+from osztalyok import BelfoldiJarat, NemzetkoziJarat, LegiTarsasag, JegyFoglalas
 
-class Jarat(ABC):
-    def __init__(self, jaratszam: str, celallomas: str, jegyar: float):
-        self.jaratszam = jaratszam
-        self.celallomas = celallomas
-        self.jegyar = jegyar
+lt = LegiTarsasag("SkyFly Airlines")
 
-class BelfoldiJarat(Jarat):
-    def __init__(self, jaratszam: str, celallomas: str, jegyar: float):
-        super().__init__(jaratszam, celallomas, jegyar)
+jarat1 = BelfoldiJarat("BF123", "Budapest", 15000)
+jarat2 = BelfoldiJarat("BF456", "Debrecen", 12000)
+jarat3 = NemzetkoziJarat("INT789", "London", 55000)
 
-class NemzetkoziJarat(Jarat):
-    def __init__(self, jaratszam: str, celallomas: str, jegyar: float):
-        super().__init__(jaratszam, celallomas, jegyar)
+lt.jaratok.append(jarat1)
+lt.jaratok.append(jarat2)
+lt.jaratok.append(jarat3)
 
-class LegiTarsasag:
-    def __init__(self, nev: str):
-        self.nev = nev
-        self.jaratok = []
-
-class JegyFoglalas:
-    def __init__(self, utas_nev: str, jarat: Jarat, datum: str):
-        self.utas_nev = utas_nev
-        self.jarat = jarat
-        self.datum = datum
+foglalasok = [
+    JegyFoglalas("Kiss Anna", jarat1, "2025-05-01"),
+    JegyFoglalas("Nagy Béla", jarat1, "2025-05-01"),
+    JegyFoglalas("Tóth László", jarat2, "2025-05-02"),
+    JegyFoglalas("Kovács Júlia", jarat2, "2025-05-02"),
+    JegyFoglalas("Szabó Péter", jarat3, "2025-05-03"),
+    JegyFoglalas("Farkas Gábor", jarat3, "2025-05-03")
+]
