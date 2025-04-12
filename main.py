@@ -13,3 +13,8 @@ class BelfoldiJarat(Jarat):
 class NemzetkoziJarat(Jarat):
     def __init__(self, jaratszam: str, celallomas: str, jegyar: float):
         super().__init__(jaratszam, celallomas, jegyar)
+
+class LegiTarsasag:
+    def __init__(self, nev: str):
+        self.nev = nev
+        self.jaratok = []
