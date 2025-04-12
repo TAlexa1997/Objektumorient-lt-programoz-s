@@ -41,5 +41,30 @@ def menu():
         else:
             print("Érvénytelen választás, próbáld újra!")
             
+def jegy_foglalasa():
+    print("\n--- Jegy foglalása ---")
+    
+    print("Elérhető járatok:")
+    for index, jarat in enumerate(lt.jaratok):
+        print(f"{index + 1}. {jarat.jaratszam} - {jarat.celallomas} - {jarat.jegyar} Ft")
+
+    try:
+        valasztott = int(input("Válassz egy járatot (sorszám): ")) - 1
+        if valasztott < 0 or valasztott >= len(lt.jaratok):
+            print("Érvénytelen sorszám.")
+            return
+        
+        utas_nev = input("Add meg az utas nevét: ")
+        datum = input("Add meg a foglalás dátumát (pl. 2025-06-01): ")
+
+        uj_foglalas = JegyFoglalas(utas_nev, lt.jaratok[valasztott], datum)
+        foglalasok.append(uj_foglalas)
+
+        print(f"Sikeres foglalás! Ár: {lt.jaratok[valasztott].jegyar} Ft")
+    
+    except ValueError:
+        print("Hibás bemenet, számot vártam.")
+
+            
             
 
