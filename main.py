@@ -18,3 +18,28 @@ foglalasok = [
     JegyFoglalas("Szabó Péter", jarat3, "2025-05-03"),
     JegyFoglalas("Farkas Gábor", jarat3, "2025-05-03")
 ]
+
+def menu():
+    while True:
+        print("\n--- Repülőjegy Foglalási Rendszer ---")
+        print("1. Jegy foglalása")
+        print("2. Foglalás lemondása")
+        print("3. Foglalások listázása")
+        print("4. Kilépés")
+
+        valasztas = input("Válassz egy lehetőséget (1-4): ")
+
+        if valasztas == "1":
+            jegy_foglalasa()
+        elif valasztas == "2":
+            foglalas_lemondasa()
+        elif valasztas == "3":
+            listaz_foglalasokat()
+        elif valasztas == "4":
+            print("Kilépés...")
+            break
+        else:
+            print("Érvénytelen választás, próbáld újra!")
+            
+            
+
